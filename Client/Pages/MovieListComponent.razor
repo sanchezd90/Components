@@ -1,10 +1,7 @@
 <div class="jumbotron"> 
     @if (Movies == null)
         {
-            <label>
-                <small class="text-muted">Cargando...</small>
-            </label>
-            <img src="/images/loading.gif" class="rounded mx-auto d- block" height="50px" width="50px">
+            <img src="/images/loading.gif" class="rounded mx-auto d-block" width="100px">
         }
     else
         {            
@@ -18,11 +15,11 @@
                         <div class="col-md-9">
                         <h5>@movie.Title</h5>
                         <blockquote> 
-                            <small class="text- muted">@movie.Description</small> 
+                            <small class="text-muted my-2">@movie.Description</small>                             
                             <br>
-                            Géneros: <small class="text- muted">@movie.Genres</small> 
-                            <footer class="blockquote-footer">
-                                <cite>@movie.ReleaseDate.ToString("dd/MM/yyyy")</cite>
+                            <p class="my-2">@movie.Genres</p>
+                            <footer>
+                               <small class="text-muted my-2">@movie.ReleaseDate.ToString("dd/MM/yyyy")</small>
                             </footer>
                         </blockquote>
                     </div>

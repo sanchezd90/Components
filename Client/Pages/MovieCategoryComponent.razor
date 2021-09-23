@@ -1,0 +1,36 @@
+<div class="jumbotron"> 
+    @if (Movies == null)
+        {
+            <label>
+                <small class="text-muted">Cargando...</small>
+            </label>
+            <img src="/images/loading.gif" class="rounded mx-auto d- block" height="50px" width="50px">
+        }
+    else
+        {            
+            @foreach (var movie in Movies) 
+                {
+                    <div class="list-group mb-3"> 
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="@movie.MovieImage" class="img-thumbnail" alt="" width="200px" height="200px"> 
+                            </div>
+                        <div class="col-md-9">
+                        <h5>@movie.Title</h5>
+                        <blockquote> 
+                            <small class="text-muted my-2">@movie.Description</small>                             
+                            <br>
+                            <p class="my-2">@movie.Genres</p>
+                            <footer>
+                               <small class="text-muted my-2">@movie.ReleaseDate.ToString("dd/MM/yyyy")</small>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div> 
+        }
+    }
+</div>
+@code{
+    [Parameter] public List<Movie> Movies {get; set; }
+}

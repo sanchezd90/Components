@@ -6,6 +6,6 @@ namespace Components.Client.Services
 {
     public interface IServiceMovies
     {
-         List<Movie> GetMovies();         
+        List<Movie> GetMovies();         
     }
 }

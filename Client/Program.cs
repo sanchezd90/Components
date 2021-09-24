@@ -23,7 +23,7 @@ namespace Components.Client
             await builder.Build().RunAsync();
         }
         private static void ConfigureServices(IServiceCollection services){
-            services.AddSingleton(IServiceMovies,ServiceMovies);
+            services.AddSingleton<IServiceMovies,ServiceMovies>();
         }
 
     }

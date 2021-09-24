@@ -6,7 +6,7 @@ namespace Components.Client.Services
 {
     public class ServiceMovies : IServiceMovies
     {        
-        public List<Movie>GetMovies(){
+        public List<Movie> GetMovies(){
             return new List<Movie>(){
                 new Movie(){Title = "Maligno", Description = "Madison está paralizada por causa de visiones impactantes de asesinatos espeluznantes. Su tormento empeora cuando descubre que estos sueños de vigilia son, de hecho, realidades aterradoras.",Genres = "Crimen, Horror, Misterio",MovieImage = "/images/maligno.png", ReleaseDate = new DateTime(2021, 09, 03)},
                 new Movie(){Title = "Ondina. Un amor para siempre", Description = "Ondina es una historiadora que enseña sobre el desarrollo urbanístico de Berlín. Cuando el hombre al que quiere la deja, un antiguo mito se apodera de ella. Ondina debe matar al traidor y regresar al agua.",Genres = "Drama, Fantasía, Misterio",MovieImage= "/images/ondina.png", ReleaseDate = new DateTime(2020, 09, 20)},

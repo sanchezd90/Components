@@ -1,1 +1,10 @@
 ﻿@page "/"
+@inject IServiceMovies movieList
+<MovieCategoryComponent Movies = "Movies"/>
+@code{
+    private List<Movie> Movies;
+    protected override async Task OnInitializedAsync() {
+        await Task.Delay(500);
+        Movies = movieList.GetMovies();
+    }
+}

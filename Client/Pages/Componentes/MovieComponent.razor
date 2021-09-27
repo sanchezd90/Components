@@ -1,0 +1,20 @@
+<div>
+    <a>
+        <img src="@Movie.MovieImage" alt="">
+    </a>
+    <p>
+        <a href="@urlMovie">@Movie.Title</a>
+    </p>
+    <div>
+        <a class="btn btn-info">Editar</a>
+        <button type="button" class="btn btn-danger" @onclick="@(()=>DeleteMovie.InvokeAsync(Movie))">Eliminar</button>
+    </div>
+</div>
+@code{
+    [Parameter] public Movie Movie{get; set;}
+    [Parameter] public EventCallback<Movie> DeleteMovie{get; set;}
+    private string urlMovie = string.Empty;
+    protected override void OnInitialized(){
+        urlMovie = $"movie/";
+    }
+}

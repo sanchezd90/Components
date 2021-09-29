@@ -8,6 +8,8 @@ namespace Components.Shared.Entity
         public Region Region {get; set;}
         public DateTime BirthDate {get; set;}
         public string Biography {get; set;}
+        public int Nominations {get; set;}
+        public int KnownCredits {get; set;}
     }
     public enum Region
     {

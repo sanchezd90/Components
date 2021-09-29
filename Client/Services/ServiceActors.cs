@@ -9,10 +9,10 @@ namespace Components.Client.Services
     {        
         public List<Actor> GetActors(){
             return new List<Actor>(){
-                new Actors(){Name = "Jhon Doe", Region = Movie.Europe, BirthDate = new DateTime(1980, 01, 18), Biography="John nació en ..."},                
-                new Actors(){Name = "Juan Perez", Region = Movie.NorthAmerica, BirthDate = new DateTime(1990, 02, 28), Biography="Juan nació en ..."},                
-                new Actors(){Name = "Jonas Kleinmann", Region = Movie.LatinAmerica, BirthDate = new DateTime(1970, 03, 26), Biography="Jonas nació en ..."},                
-                new Actors(){Name = "Abdul Farez", Region = Movie.MiddleEast, BirthDate = new DateTime(1960, 04, 16), Biography="Abdul nació en ..."},                
+                new Actor(){Name = "Jhon Doe", Region = Region.Europe, BirthDate = new DateTime(1980, 01, 18), Biography="John nació en ...", Nominations=1, KnownCredits=10},                
+                new Actor(){Name = "Juan Perez", Region = Region.NorthAmerica, BirthDate = new DateTime(1990, 02, 28), Biography="Juan nació en ...", Nominations=2, KnownCredits=20},                
+                new Actor(){Name = "Jonas Kleinmann", Region = Region.LatinAmerica, BirthDate = new DateTime(1970, 03, 26), Biography="Jonas nació en ...", Nominations=3, KnownCredits=30},                
+                new Actor(){Name = "Abdul Farez", Region = Region.MiddleEast, BirthDate = new DateTime(1960, 04, 16), Biography="Abdul nació en ...", Nominations=4, KnownCredits=40},                
             };
         }
     }

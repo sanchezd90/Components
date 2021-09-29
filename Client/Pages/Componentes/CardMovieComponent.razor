@@ -1,0 +1,27 @@
+<div class="jumbotron">
+    <h6>Películas</h6>
+    <div class="container-fluid">
+        <div class="row mb-3">
+            @foreach (var movie in Movies)
+            {
+                <div class="col-md-4">
+                    <div class="card flex-md-row mb-4 box-shadow h-md-300">
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <div class="card">
+                                <h5 class="card-title">@movie.Title</h5>
+                                <p class="card-text">@movie.Description</p>
+                                <p class="card-text">@movie.Genres</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">@movie.ReleaseDate</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@code{
+    [Parameter] public List<Movie> Movies {get; set; }
+}

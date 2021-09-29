@@ -1,5 +1,21 @@
-@page "/movies/edit"
+@* @page "/movies/edit"
 <h6>Editar película</h6>
+<EditForm Model="Movie" OnValidSubmit="Create">
+    <div class="form-group">
+        <label for="" class="form-label">
+            Película
+        </label>
+        <div class="mb-3">
+            <Inputtext class="form-control" @bind-Value="@Movie.Title"></Inputtext>
+        </div>
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-success">Guardar</button>
+    </div>
+</Editform>
 @code{
-    
-}
+    private Movie Movie = new Movie();
+    private void Create() {
+        Console.WriteLine($"Nombre de la película: {Movie.Title}")
+    }
+} *@

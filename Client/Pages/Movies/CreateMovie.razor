@@ -1,10 +1,8 @@
 @page "/movies/create"
-@inject NavigationManager navigationManager
-<h6>Registrar película</h6>
-<button @onclick="Create">Registrar</button>
+<FormMovie OnValidSubmit="Create" Movie="Movie"></FormMovie>
 @code{
+    private Movie Movie = new Movie();
     void Create(){
-        Console.WriteLine(navigationManager.Uri);
-        navigationManager.NavigateTo("new");
+        Console.WriteLine($"La película {Movie.Title} ha sido creada");
     }
 }

@@ -1,5 +1,22 @@
-@page "/movies/edit/{MovieId:int}"
-<h6>Editar película</h6>
+@page "/movies/edit/{Id:int}"
+<FormMovie OnValidSubmit="Edit" Movie="Movie"></FormMovie>
 @code{
-    [Parameter] public int MovieId {get; set; }
+    [Parameter] public int Id {get; set; }
+    private Movie Movie;
+
+    protected override void OnInitialized(){
+        Movie = new Movie(){
+            Id = Id,
+            Title = "Maligno", 
+            Description = "Madison está paralizada por causa de visiones impactantes de asesinatos espeluznantes. Su tormento empeora cuando descubre que estos sueños de vigilia son, de hecho, realidades aterradoras.",
+            Genres = "Crimen, Horror, Misterio",
+            MovieImage = "/images/maligno.png", 
+            ReleaseDate = new DateTime(2021, 09, 03)
+        };
+    }
+
+    private void Edit(){
+        Console.WriteLine($"Id: {Movie.Id}");
+        Console.WriteLine($"Id: {Movie.Title}");
+    }
 }

@@ -1,5 +1,19 @@
-@page "/categories/edit/{CategoryId:int}"
+@page "/categories/edit/{Id:int}"
 <h6>Editar categoría</h6>
+<FormCategory OnValidSubmit="Edit" Category="Category"></FormCategory>
 @code{
-    [Parameter] public int CategoryId {get; set; }
+    [Parameter] public int Id {get; set; }
+    private Category Category;
+
+    protected override void OnInitialized(){
+        Category = new Category(){
+            Id = Id,
+            Name = "Suspenso"
+        };
+    }
+
+    private void Edit(){
+        Console.WriteLine($"Id: {Category.Id}");
+        Console.WriteLine($"Id: {Category.Name}");
+    }
 }

@@ -1,0 +1,22 @@
+@page "/categories/create"
+<div class="jumbotron">
+    <EditForm Model="Category" OnSubmit="Create">
+        <div class="form-label mb-3">
+            <label class="form-label mb-3">Categoría</label>
+            <div class="mb-3">
+                <InputText class="form-control" @bind-Value=@Category.Name></InputText>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success" type="submit">Crear</button>
+            </div>
+        </div>
+    </EditForm>
+</div>
+
+@code{
+    private Category Category = new Category();
+    private void Create()
+    {
+        Console.WriteLine($"Nombre de la categoría de películas {Category.Name}");
+    }
+}

@@ -1,0 +1,10 @@
+@page "/category/{CategoryId:int}"
+@page "/category/{CategoryId:int}/{Name}"
+<h6>Ver detalles de las categorías</h6>
+@code{
+    [Parameter] public int CategoryId {get; set;}
+    [Parameter] public string Name {get; set;}
+    protected override void OnInitialized(){
+        Console.WriteLine($"El id de la categoría es {CategoryId} y el nombre {Name}");
+    }
+}

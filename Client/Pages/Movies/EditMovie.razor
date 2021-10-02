@@ -1,22 +1,27 @@
 @page "/movies/edit/{Id:int}"
-<FormMovie OnValidSubmit="Edit" Movie="Movie"></FormMovie>
-@code{
-    [Parameter] public int Id {get; set; }
-    private Movie Movie;
+@using Components.Client.Pages.Componentes
 
-    protected override void OnInitialized(){
-        Movie = new Movie(){
-            Id = Id,
-            Title = "Maligno", 
+<FormMovie Movie="Movie" OnValidSubmit="Edit"></FormMovie>
+@code {
+    [Parameter] public int Id { get; set; }
+    private Movie Movie;
+    protected override void OnInitialized()
+    {
+        Movie = new Movie()
+        {
+            Title = "Maligno",
+            InTheaters = true,
             Description = "Madison está paralizada por causa de visiones impactantes de asesinatos espeluznantes. Su tormento empeora cuando descubre que estos sueños de vigilia son, de hecho, realidades aterradoras.",
-            Genres = "Crimen, Horror, Misterio",
             MovieImage = "/images/maligno.png", 
             ReleaseDate = new DateTime(2021, 09, 03)
         };
     }
-
-    private void Edit(){
-        Console.WriteLine($"Id: {Movie.Id}");
-        Console.WriteLine($"Id: {Movie.Title}");
+    void Edit()
+    {
+        Console.WriteLine($"Pelicula: {Movie.Title}");
+        Console.WriteLine($"Premier: {Movie.ReleaseDate}");
+        Console.WriteLine($"Esta en cartelera: {Movie.InTheaters}");
+        Console.WriteLine($"Poster: {Movie.MovieImage}");
+        Console.WriteLine($"Sinopsis: {Movie.Description}");
     }
 }

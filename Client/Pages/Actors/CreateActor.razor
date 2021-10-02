@@ -1,0 +1,9 @@
+@page "/actors/create"
+@using Components.Client.Pages.Actors
+<FormActor OnValidSubmit="Create" Actor="Actor"></FormActor>
+@code{
+    private Actor Actor = new Actor();
+    void Create(){
+        Console.WriteLine("");
+    }
+}

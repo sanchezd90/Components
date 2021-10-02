@@ -1,0 +1,24 @@
+@page "/actors/edit/{ActorId:int}"
+
+<FormActor OnValidSubmit="Edit" Actor="Actor"></FormActor>
+@code {
+    [Parameter] public int ActorId { get; set; }
+    Actor Actor = new Actor();
+    protected override void OnInitialized()
+    {
+        Actor = new Actor()
+        {
+            Id=1, 
+            Name = "Kate Winslet", 
+            Region = Region.Europe, 
+            BirthDate = new DateTime(1980, 01, 18), 
+            Biography="Kate nació en ...", 
+            Nominations=1, 
+            KnownCredits=10, 
+            Photo="/images/winslet.png"
+        };
+    }
+    private void Edit(){
+        Console.WriteLine("Editando actor");
+    }
+}
